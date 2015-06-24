@@ -63,61 +63,41 @@ def DrawScene(inpd,params):
         
         if showLines:
             RenderLineWithSegmentOrientation(inpd,lineNum)
-            #RenderLineWithTensorOrientation(inpd,lineNum)
             
         if showTensor1:
-            #RenderTensorsOnLine(inpd,lineNum,glyphSpace,glyphScale,'tensor1',2)
-            #RenderTensorsOnLineDirectly(inpd,lineNum,glyphSpace,glyphScale,'tensor1',2)
             RenderTensorWithCustomColors(inpd,lineNum, params,'tensor1',0)
             
         if showTensor2:
-            #RenderTensorsOnLine(inpd,lineNum,glyphSpace,glyphScale,'tensor2',3)
-            # RenderTensorsOnLineDirectly(inpd,lineNum,glyphSpace,glyphScale,'tensor2',3)
             RenderTensorWithCustomColors(inpd,lineNum, params,'tensor2',1)
             
         if showTubes:
             if tubeColorFlag==0:
-                #color=params['tubeFixedColor']
-                #print color
-                #ShowWaterWithFixedColor(inpd,lineNum,glyphSpace,tubeScale,color)
                 RenderTubeWithFixedColor(inpd,lineNum,params)
             elif tubeColorFlag==1:
                 RenderTubeWithOrientation(inpd,lineNum,params)
             elif tubeColorFlag==2:
                 RenderTubeWithCustomColors(inpd,lineNum,params)
-                #ShowWaterWithCustomColor(inpd,lineNum,glyphSpace,tubeScale,params)
                 
     else: # multiple lines
         
         for lidx in range(1,inpd.GetNumberOfLines()+1,lineSpace):
-            # Note the num of cells begins with 1 not 0
-            # print 'Line No.:', lidx
             if showLines:
                 RenderLineWithSegmentOrientation(inpd,lidx)
-                #RenderLineWithTensorOrientation(inpd,lidx)
                 
             if showTensor1:
-                #RenderTensorsOnLine(inpd,lidx,glyphSpace,glyphScale,'tensor1',2)
-                #RenderTensorsOnLineDirectly(inpd,lidx,glyphSpace,glyphScale,'tensor1',2)
                 RenderTensorWithCustomColors(inpd,lidx, params,'tensor1',0)
                 
             if showTensor2:
-                #RenderTensorsOnLine(inpd,lidx,glyphSpace,glyphScale,'tensor2',3)
-                #RenderTensorsOnLineDirectly(inpd,lidx,glyphSpace,glyphScale,'tensor2',3)
                 RenderTensorWithCustomColors(inpd,lidx, params,'tensor2',1)
                 
             if showTubes:
                 if tubeColorFlag==0:
-                    #color=params['tubeFixedColor']
-                    #print color
-                    #ShowWaterWithFixedColor(inpd,lidx,glyphSpace,tubeScale,color)
                     RenderTubeWithFixedColor(inpd,lidx,params)
                 elif tubeColorFlag==1:
                     RenderTubeWithOrientation(inpd,lidx,params)
                 elif tubeColorFlag==2:
                     RenderTubeWithCustomColors(inpd,lidx,params)
-                    #ShowWaterWithCustomColor(inpd,lidx,glyphSpace,tubeScale,params)
-    
+                    
     return
 #==============================================================================
 # TwoTensorModelViz 
