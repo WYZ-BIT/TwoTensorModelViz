@@ -24,7 +24,7 @@ sys.path.append('D:\SL4\S4BD\python-install\DLLs')
 
 # Set the path for vtkPyOpenGLActor
 # It is not necessary, if vtkPyOpenGLActor hsa been installed in Slicer.
-# sys.path.append('.\TwoTensorModelVizLib\Dlls')
+sys.path.append('.\TwoTensorModelVizLib\Dlls')
 
 print "PyOpenGL and vtkPyOpenGLActor have been enabled!"
 
